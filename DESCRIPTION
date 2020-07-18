@@ -18,3 +18,5 @@ Suggests:
     MASS (>= 7.3.0)
     gMCP
     tidyverse
+    nycflights13
+    

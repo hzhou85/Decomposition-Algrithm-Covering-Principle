@@ -18,7 +18,7 @@
 #' D_rule<-list(d1,d2,d3,d4,d5,d6)
 #' MaxUnconstClass(n,D_rule)
 
-#' 7/18/2020
+#' 7/18/2020 11:50am
 #'
 #'
 #'
