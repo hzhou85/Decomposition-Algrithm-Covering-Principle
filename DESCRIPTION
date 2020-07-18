@@ -1,0 +1,20 @@
+Package: decmpAlgCP
+Type: Package
+Title: Decomposition of a Hierarchical Family into Subfamilies Based on Covering Principle in Multiple Comparisons
+Version: 0.1.0
+Author: Hong Zhou
+Maintainer: Hong ZHou <hzhou@astate.edu>
+Description: A algrithm to decompse a hierarchical family of hypotheses into subfamilies based on Covering Principle in mulitple hypotheses testing.
+    You enter the family of hypotheses and their relations, and it priovides you decomposed subfamilies.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+
+
+Imports:
+    ggvis (>= 0.2),
+    dplyr (>= 0.3.0.1)
+Suggests:
+    MASS (>= 7.3.0)
+    gMCP
+    tidyverse
