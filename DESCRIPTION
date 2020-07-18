@@ -19,4 +19,6 @@ Suggests:
     gMCP
     tidyverse
     nycflights13
+    gapminder
+    Lahman
     
