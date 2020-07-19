@@ -26,7 +26,7 @@ subrule<-function(Ii,Ji)
 }
 
 
-#' A Function to Construct an Operator for Verfication of Subsets
+#' A Function to Construct an Operator for Verification of Subsets
 #'
 #' This function allows you to verify whether a set "u" is a subset of a set "v".
 #' @param u, a set
