@@ -12,13 +12,5 @@ LazyData: true
 
 
 Imports:
-    ggvis (>= 0.2),
-    dplyr (>= 0.3.0.1)
 Suggests:
-    MASS (>= 7.3.0)
-    gMCP
-    tidyverse
-    nycflights13
-    gapminder
-    Lahman
-    
+
