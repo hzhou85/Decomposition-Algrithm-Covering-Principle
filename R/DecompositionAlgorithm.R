@@ -25,12 +25,12 @@
 #' # {(1,2),(1,4),(1,6),(2,3),(2,5),(3,4),(3,6),(4,5),(5,6)}
 
 
-# Combinations:
+# Combinations:-----
 #
 # Level 1:select n-1 out n; each column is a combination
 # Number of columns = number of all combinations: choose(3,2)=3
 
-
+# Function to find Maximum Unconstrained Class -----
 MaxUnconstClass<-function(n,D)
 {
 # RemainderSet: remainder class storing in-decompsiable subsets
@@ -39,17 +39,17 @@ MaxUnconstClass<-function(n,D)
   LL<-list()
 
 # Generate RemainderSet for 1-level; Only two rules are needed: (1)J in S (2) I and S <> empty
-# Define RemainderSet as global list-variable
+# Define RemainderSet as global list-variable----
   RemainderSet<-list()
   L1<-combn(n,n-1)
 # Convert matrix of all combinations combn(n,k) into a list LL
   LL<-as.list(data.frame(L1))
   nn<-length(LL)
   IndexSet<-c()
-###################################################################################
-# Level-1: J in S and I intersection S <> Empty set
-#
-#
+
+
+# Level-1: J in S and I intersection S <> Empty set ------
+
 for (i4 in 1:nn)
 {
 	S<-LL[[i4]]
@@ -66,15 +66,20 @@ for (i4 in 1:nn)
 
 }
 Temp<-list()
-for (ii1 in 1:length(IndexSet))
-{     tt<-IndexSet[ii1]
-	TT<-LL[[tt]]
-	Temp<-c(Temp,list(TT))
+if (length(IndexSet)!=0 )
+{
+  for (ii1 in 1:length(IndexSet))
+  { tt<-IndexSet[ii1]
+	  TT<-LL[[tt]]
+	  Temp<-c(Temp,list(TT))
+  }
 }
-
-RemainderSet<-setdiff(LL,Temp)
+else
+{
+  RemainderSet<-setdiff(LL,Temp)
+}
 ####################################################################################################
-# Define a function "Remain" to get the Remainder Set: LL for k-level;
+# Function "Remain" to get the Remainder Set: LL for k-level;
 # k = n-2,n-3,...,2,1
 #Remain<-function(n,k)
 ##########################################################################
@@ -139,9 +144,12 @@ while (j1>= 1)
 #Append all unconstrained sets at level-k to RemainderSet
 		RemainderSet<-c(RemainderSet,Temp2)
 	}
+	else
+	{
+	  Temp2<-setdiff(LL,Temp1)
+	  RemainderSet<-c(RemainderSet,Temp2)
+	}
 j1<-j1-1
 }
-
 return(RemainderSet)
-
 }
